@@ -13,10 +13,10 @@
   align-items: top;
 }
 
-.tasks__item__toggle:hover {
+/* .tasks__item__toggle:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-color: rgba(0, 0, 0, 0.15);
-}
+} */
 
 .tasks__item__toggle--completed {
   text-decoration: line-through;
@@ -25,6 +25,7 @@
 }
 
 /* .tasks__item__toggle {
+/* .tasks__item__toggle {
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -32,6 +33,7 @@
   background-color: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
 } */
+
 
 button.tasks__item__remove {
   top: 50%;
