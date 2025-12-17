@@ -1,7 +1,7 @@
 import TaskList from './components/TaskList.jsx';
 import './App.css';
 import { useState } from 'react';
-import TASKS from './data/tasks.js';
+import TASKS from './data/contentTask.js';
 
 const App = () => {
   const [tasks, setTasks] = useState(TASKS);
@@ -9,7 +9,7 @@ const App = () => {
   const handleComplete = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, complete: !task.isComplete } : task
+        task.id === id ? { ...task, isComplete: !task.isComplete } : task
       )
     );
   };
@@ -26,7 +26,6 @@ const App = () => {
         <h1>Task List</h1>
       </header>
       <main>
-        <div>{<TaskList tasks={TASKS} />}</div>
         <TaskList
           tasks={tasks}
           onComplete={handleComplete}
