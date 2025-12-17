@@ -9,7 +9,7 @@ const App = () => {
   const handleComplete = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, complete: !task.isComplete } : task
+        task.id === id ? { ...task, isComplete: !task.isComplete } : task
       )
     );
   };
@@ -26,7 +26,6 @@ const App = () => {
         <h1>Task List</h1>
       </header>
       <main>
-        <div>{<TaskList tasks={TASKS} />}</div>
         <TaskList
           tasks={tasks}
           onComplete={handleComplete}
