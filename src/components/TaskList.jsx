@@ -11,6 +11,8 @@ const TaskList = ({ tasks }) => {
           id={task.id}
           title={task.title}
           isComplete={task.isComplete}
+          onComplete={task.onComplete}
+          onDelete={task.onDelete}
         />
       );
     });
@@ -24,6 +26,8 @@ TaskList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       isComplete: PropTypes.bool.isRequired,
+      onComplete: PropTypes.func.isRequired,
+      onDelete: PropTypes.func.isRequired,
     })
   ).isRequired,
 };
