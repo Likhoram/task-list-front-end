@@ -13,14 +13,14 @@
   align-items: top;
 }
 
-/* .tasks__item__toggle:hover {
+.tasks__item__toggle:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-color: rgba(0, 0, 0, 0.15);
-} */
+}
 
 .tasks__item__toggle--completed {
   text-decoration: line-through;
-  background-color: rgba(212, 35, 22, 0.902);
+  background-color: rgba(22, 155, 212, 0.156);
   border-color: rgba(0, 128, 0, 0.2);
 }
 
