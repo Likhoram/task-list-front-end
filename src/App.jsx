@@ -66,6 +66,15 @@ const App = () => {
       .catch((error) => {console.error('Error deleting task:', error);});
   };
 
+  const onHandleSubmit = (data) => {
+    axios
+      .post(`${kbaseURL}/cats`, data)
+      .then((result) => {
+        setCatData((prevCats) => [convertFromAPI(result.data), ...prevCats]);
+      })
+      .catch((error) => console.error("Error adding cat:", error));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
