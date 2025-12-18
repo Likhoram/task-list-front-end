@@ -1,5 +1,6 @@
 import TaskList from './components/TaskList.jsx';
 import './App.css';
+import NewTaskForm from "./components/NewTaskForm.jsx";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -68,11 +69,11 @@ const App = () => {
 
   const onHandleSubmit = (data) => {
     axios
-      .post(`${kbaseURL}/cats`, data)
+      .post(`${kbaseURL}/tasks`, data)
       .then((result) => {
-        setCatData((prevCats) => [convertFromAPI(result.data), ...prevCats]);
+        setTasks((prevTasks) => [convertFromAPI(result.data), ...prevTasks]);
       })
-      .catch((error) => console.error("Error adding cat:", error));
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -86,6 +87,7 @@ const App = () => {
           onComplete={handleComplete}
           onDelete={handleDelete}
         />
+        <NewTaskForm onHandleSubmit={onHandleSubmit} />
       </main>
     </div>
   );
